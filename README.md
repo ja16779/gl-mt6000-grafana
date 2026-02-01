@@ -6,6 +6,8 @@ Push metrics from a GL-iNet MT6000 (Flint 2) OpenWrt router to Grafana Cloud via
 
 A lightweight shell script (`grafana_push.sh`) that runs on the router and pushes system, network, WiFi, DNS, and QoS metrics to Grafana Cloud every 60 seconds. Includes a pre-built Grafana dashboard with 44 panels organized in 6 sections.
 
+![Dashboard Screenshot](screenshots/dashboard-full.png)
+
 ## Dashboard Sections
 
 ### Sistema
