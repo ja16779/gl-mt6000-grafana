@@ -1,0 +1,3385 @@
+{
+   "annotations" : {
+      "list" : [
+         {
+            "builtIn" : 1,
+            "datasource" : {
+               "type" : "grafana",
+               "uid" : "-- Grafana --"
+            },
+            "enable" : true,
+            "hide" : true,
+            "iconColor" : "rgba(0, 211, 255, 1)",
+            "name" : "Annotations & Alerts",
+            "type" : "dashboard"
+         }
+      ]
+   },
+   "editable" : true,
+   "fiscalYearStartMonth" : 0,
+   "graphTooltip" : 0,
+   "id" : 4367351507005440,
+   "links" : [],
+   "panels" : [
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 0
+         },
+         "id" : 100,
+         "panels" : [],
+         "title" : "Sistema",
+         "type" : "row"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     }
+                  ]
+               },
+               "unit" : "s"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 4,
+            "x" : 0,
+            "y" : 1
+         },
+         "id" : 1,
+         "options" : {
+            "colorMode" : "value",
+            "graphMode" : "area",
+            "justifyMode" : "auto",
+            "orientation" : "auto",
+            "percentChangeColorMode" : "standard",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showPercentChange" : false,
+            "textMode" : "auto",
+            "wideLayout" : true
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_uptime{host=\"glmt6000\"}",
+               "legendFormat" : "Uptime",
+               "refId" : "A"
+            }
+         ],
+         "title" : "Uptime",
+         "type" : "stat"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 70
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 4,
+            "x" : 4,
+            "y" : 1
+         },
+         "id" : 2,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_mem_pct{host=\"glmt6000\"}",
+               "legendFormat" : "RAM",
+               "refId" : "A"
+            }
+         ],
+         "title" : "RAM Usage",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 60
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "celsius"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 4,
+            "x" : 8,
+            "y" : 1
+         },
+         "id" : 3,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_temp{host=\"glmt6000\"}",
+               "legendFormat" : "Temp",
+               "refId" : "A"
+            }
+         ],
+         "title" : "Temperature",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 2,
+               "max" : 4,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 1
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 2
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 3
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 4,
+            "x" : 12,
+            "y" : 1
+         },
+         "id" : 4,
+         "options" : {
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_load{host=\"glmt6000\"}",
+               "legendFormat" : "Load",
+               "refId" : "A"
+            }
+         ],
+         "title" : "CPU Load",
+         "type" : "gauge"
+      },
+      {
+         "description" : "Conexiones activas (conntrack)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 500
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 1000
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 2000
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 4,
+            "x" : 16,
+            "y" : 1
+         },
+         "id" : 50,
+         "options" : {
+            "colorMode" : "background",
+            "graphMode" : "area",
+            "justifyMode" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "textMode" : "auto"
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_system_connections{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "Connections",
+               "range" : false,
+               "refId" : "A"
+            }
+         ],
+         "title" : "Connections",
+         "type" : "stat"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 75
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 3,
+            "x" : 20,
+            "y" : 1
+         },
+         "id" : 21,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu0\"}",
+               "legendFormat" : "CPU 0",
+               "refId" : "A"
+            }
+         ],
+         "title" : "CPU 0",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 75
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 3,
+            "x" : 0,
+            "y" : 5
+         },
+         "id" : 22,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu1\"}",
+               "legendFormat" : "CPU 1",
+               "refId" : "A"
+            }
+         ],
+         "title" : "CPU 1",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 75
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 3,
+            "x" : 3,
+            "y" : 5
+         },
+         "id" : 23,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu2\"}",
+               "legendFormat" : "CPU 2",
+               "refId" : "A"
+            }
+         ],
+         "title" : "CPU 2",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 75
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 3,
+            "x" : 6,
+            "y" : 5
+         },
+         "id" : 24,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu3\"}",
+               "legendFormat" : "CPU 3",
+               "refId" : "A"
+            }
+         ],
+         "title" : "CPU 3",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 20,
+                  "gradientMode" : "scheme",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : [
+               {
+                  "matcher" : {
+                     "id" : "byName",
+                     "options" : "cpu0"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "color",
+                        "value" : {
+                           "fixedColor" : "green",
+                           "mode" : "fixed"
+                        }
+                     }
+                  ]
+               },
+               {
+                  "matcher" : {
+                     "id" : "byName",
+                     "options" : "cpu1"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "color",
+                        "value" : {
+                           "fixedColor" : "blue",
+                           "mode" : "fixed"
+                        }
+                     }
+                  ]
+               },
+               {
+                  "matcher" : {
+                     "id" : "byName",
+                     "options" : "cpu2"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "color",
+                        "value" : {
+                           "fixedColor" : "orange",
+                           "mode" : "fixed"
+                        }
+                     }
+                  ]
+               },
+               {
+                  "matcher" : {
+                     "id" : "byName",
+                     "options" : "cpu3"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "color",
+                        "value" : {
+                           "fixedColor" : "purple",
+                           "mode" : "fixed"
+                        }
+                     }
+                  ]
+               }
+            ]
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 9,
+            "y" : 5
+         },
+         "id" : 7,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu0\"}",
+               "legendFormat" : "cpu0",
+               "refId" : "A"
+            },
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu1\"}",
+               "legendFormat" : "cpu1",
+               "refId" : "B"
+            },
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu2\"}",
+               "legendFormat" : "cpu2",
+               "refId" : "C"
+            },
+            {
+               "expr" : "router_cpu_usage{host=\"glmt6000\",core=\"cpu3\"}",
+               "legendFormat" : "cpu3",
+               "refId" : "D"
+            }
+         ],
+         "title" : "CPU Usage per Core (History)",
+         "type" : "timeseries"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 70
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 4,
+            "w" : 12,
+            "x" : 0,
+            "y" : 13
+         },
+         "id" : 18,
+         "options" : {
+            "barShape" : "flat",
+            "barWidthFactor" : 0.5,
+            "effects" : {
+               "barGlow" : false,
+               "centerGlow" : false,
+               "gradient" : false
+            },
+            "endpointMarker" : "point",
+            "minVizHeight" : 75,
+            "minVizWidth" : 75,
+            "orientation" : "auto",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "segmentCount" : 1,
+            "segmentSpacing" : 0.3,
+            "shape" : "gauge",
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true,
+            "sizing" : "auto",
+            "sparkline" : false,
+            "textMode" : "auto"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_storage_root_pct{host=\"glmt6000\"}",
+               "legendFormat" : "Flash",
+               "refId" : "A"
+            },
+            {
+               "expr" : "router_storage_usb_pct{host=\"glmt6000\"}",
+               "legendFormat" : "USB",
+               "refId" : "B"
+            }
+         ],
+         "title" : "Storage",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "fixedColor" : "blue",
+                  "mode" : "fixed"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 25,
+                  "gradientMode" : "scheme",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 13
+         },
+         "id" : 19,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_mem_pct{host=\"glmt6000\"}",
+               "legendFormat" : "RAM %",
+               "refId" : "A"
+            }
+         ],
+         "title" : "RAM Usage History",
+         "type" : "timeseries"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "fixedColor" : "orange",
+                  "mode" : "fixed"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 15,
+                  "gradientMode" : "scheme",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "celsius"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 13
+         },
+         "id" : 20,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_system_temp{host=\"glmt6000\"}",
+               "legendFormat" : "Temp",
+               "refId" : "A"
+            }
+         ],
+         "title" : "Temperature History",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Numero de procesos corriendo en el router",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 15,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 200
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 300
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 8,
+            "x" : 0,
+            "y" : 29
+         },
+         "id" : 106,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_procs_count{host=\"glmt6000\"}",
+               "legendFormat" : "Processes",
+               "range" : true,
+               "refId" : "A"
+            }
+         ],
+         "title" : "Process Count",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Los 5 procesos que mas memoria (VSZ) consumen",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "blue",
+                        "value" : null
+                     },
+                     {
+                        "color" : "green",
+                        "value" : 10000
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50000
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 100000
+                     }
+                  ]
+               },
+               "unit" : "deckbytes"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 8,
+            "x" : 8,
+            "y" : 29
+         },
+         "id" : 107,
+         "options" : {
+            "displayMode" : "gradient",
+            "minVizHeight" : 16,
+            "minVizWidth" : 8,
+            "namePlacement" : "auto",
+            "orientation" : "horizontal",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : true
+            },
+            "showUnfilled" : true,
+            "sizing" : "auto",
+            "text" : {},
+            "valueMode" : "color"
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "topk(5, router_top_mem_vsz_kb{host=\"glmt6000\"})",
+               "instant" : true,
+               "legendFormat" : "{{proc}}",
+               "range" : false,
+               "refId" : "A"
+            }
+         ],
+         "title" : "Top 5 Memory Processes",
+         "type" : "bargauge"
+      },
+      {
+         "description" : "File descriptors abiertos vs maximo del sistema",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "max" : 100305,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 50000
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 75000
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90000
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 8,
+            "x" : 16,
+            "y" : 29
+         },
+         "id" : 108,
+         "options" : {
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_procs_fd_open{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "Open FDs",
+               "range" : false,
+               "refId" : "A"
+            }
+         ],
+         "title" : "File Descriptors",
+         "type" : "gauge"
+      },
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 37
+         },
+         "id" : 101,
+         "panels" : [],
+         "title" : "WAN / Conectividad",
+         "type" : "row"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [
+                  {
+                     "options" : {
+                        "0" : {
+                           "color" : "red",
+                           "text" : "OFFLINE"
+                        },
+                        "1" : {
+                           "color" : "green",
+                           "text" : "ONLINE"
+                        }
+                     },
+                     "type" : "value"
+                  }
+               ],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "red",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "green",
+                        "value" : 1
+                     }
+                  ]
+               }
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 38
+         },
+         "id" : 14,
+         "options" : {
+            "colorMode" : "background",
+            "graphMode" : "area",
+            "justifyMode" : "auto",
+            "orientation" : "horizontal",
+            "percentChangeColorMode" : "standard",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showPercentChange" : false,
+            "textMode" : "value_and_name",
+            "wideLayout" : true
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "max by(iface)(router_wan_status{host=\"glmt6000\",iface=\"wan\"})",
+               "instant" : true,
+               "legendFormat" : "WAN1 (Telmex)",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "max by(iface)(router_wan_status{host=\"glmt6000\",iface=\"wan2\"})",
+               "instant" : true,
+               "legendFormat" : "WAN2 (Megacable)",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN Status",
+         "type" : "stat"
+      },
+      {
+         "description" : "IP publica actual de cada WAN",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "mappings" : [
+                  {
+                     "options" : {
+                        "0" : {
+                           "color" : "red",
+                           "text" : "Offline"
+                        },
+                        "1" : {
+                           "color" : "green",
+                           "text" : "Online"
+                        }
+                     },
+                     "type" : "value"
+                  }
+               ],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     }
+                  ]
+               }
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 6,
+            "x" : 12,
+            "y" : 38
+         },
+         "id" : 29,
+         "options" : {
+            "colorMode" : "background",
+            "graphMode" : "none",
+            "justifyMode" : "center",
+            "orientation" : "vertical",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "textMode" : "value_and_name"
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "topk by(iface)(1, router_wan_status{host=\"glmt6000\",iface=\"wan\"})",
+               "instant" : true,
+               "legendFormat" : "WAN1: {{pub_ip}}",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "topk by(iface)(1, router_wan_status{host=\"glmt6000\",iface=\"wan2\"})",
+               "instant" : true,
+               "legendFormat" : "WAN2: {{pub_ip}}",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN Public IPs",
+         "type" : "stat"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 10,
+                  "gradientMode" : "none",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "ms"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 46
+         },
+         "id" : 8,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_wan_ping{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 (Telmex)",
+               "refId" : "A"
+            },
+            {
+               "expr" : "router_wan_ping{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 (Megacable)",
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN Ping Latency",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Porcentaje de paquetes perdidos por WAN (5 pings cada 60s)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 20,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 1
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 10
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 50
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 46
+         },
+         "id" : 27,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wan_loss{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 (Telmex)",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wan_loss{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 (Megacable)",
+               "range" : true,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN Packet Loss %",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Conexiones activas de 62,976 max (nf_conntrack)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "max" : 62976,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 31488
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 47232
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 56678
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 6,
+            "x" : 0,
+            "y" : 54
+         },
+         "id" : 28,
+         "options" : {
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_conntrack_current{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "Current",
+               "range" : false,
+               "refId" : "A"
+            }
+         ],
+         "title" : "Conntrack Usage",
+         "type" : "gauge"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 20,
+                  "gradientMode" : "scheme",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "Bps"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 6,
+            "y" : 54
+         },
+         "id" : 9,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "rate(router_traffic_rx{host=\"glmt6000\",iface=\"wan\"}[5m])",
+               "legendFormat" : "Download",
+               "refId" : "A"
+            },
+            {
+               "expr" : "rate(router_traffic_tx{host=\"glmt6000\",iface=\"wan\"}[5m])",
+               "legendFormat" : "Upload",
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN1 (Telmex) Traffic",
+         "type" : "timeseries"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 20,
+                  "gradientMode" : "scheme",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "Bps"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 62
+         },
+         "id" : 10,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "rate(router_traffic_rx{host=\"glmt6000\",iface=\"wan2\"}[5m])",
+               "legendFormat" : "Download",
+               "refId" : "A"
+            },
+            {
+               "expr" : "rate(router_traffic_tx{host=\"glmt6000\",iface=\"wan2\"}[5m])",
+               "legendFormat" : "Upload",
+               "refId" : "B"
+            }
+         ],
+         "title" : "WAN2 (Megacable) Traffic",
+         "type" : "timeseries"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 15,
+                  "gradientMode" : "none",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "Bps"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 62
+         },
+         "id" : 11,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "rate(router_traffic_rx{host=\"glmt6000\",iface=\"lan\"}[5m])",
+               "legendFormat" : "LAN RX",
+               "refId" : "A"
+            },
+            {
+               "expr" : "rate(router_traffic_tx{host=\"glmt6000\",iface=\"lan\"}[5m])",
+               "legendFormat" : "LAN TX",
+               "refId" : "B"
+            },
+            {
+               "expr" : "rate(router_traffic_rx{host=\"glmt6000\",iface=\"iot\"}[5m])",
+               "legendFormat" : "IOT RX",
+               "refId" : "C"
+            },
+            {
+               "expr" : "rate(router_traffic_tx{host=\"glmt6000\",iface=\"iot\"}[5m])",
+               "legendFormat" : "IOT TX",
+               "refId" : "D"
+            }
+         ],
+         "title" : "LAN / IOT Traffic",
+         "type" : "timeseries"
+      },
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 70
+         },
+         "id" : 102,
+         "panels" : [],
+         "title" : "Clientes",
+         "type" : "row"
+      },
+      {
+         "description" : "Número actual de clientes WiFi conectados por banda",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "mappings" : [],
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 5
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 15
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 25
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 71
+         },
+         "id" : 26,
+         "options" : {
+            "displayMode" : "gradient",
+            "minVizHeight" : 16,
+            "minVizWidth" : 8,
+            "namePlacement" : "auto",
+            "orientation" : "horizontal",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : true
+            },
+            "showUnfilled" : true,
+            "sizing" : "auto",
+            "text" : {},
+            "valueMode" : "color"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_wifi_2g{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "WiFi 2.4G",
+               "queryType" : "instant",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_wifi_5g{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "WiFi 5G",
+               "queryType" : "instant",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WiFi Clients",
+         "type" : "bargauge"
+      },
+      {
+         "description" : "Número actual de clientes DHCP en redes IOT y LAN",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "mappings" : [],
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 10
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 30
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 50
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 71
+         },
+         "id" : 25,
+         "options" : {
+            "displayMode" : "gradient",
+            "minVizHeight" : 16,
+            "minVizWidth" : 8,
+            "namePlacement" : "auto",
+            "orientation" : "horizontal",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : true
+            },
+            "showUnfilled" : true,
+            "sizing" : "auto",
+            "text" : {},
+            "valueMode" : "color"
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_dhcp_iot{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "IOT (192.168.8.x)",
+               "queryType" : "instant",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_dhcp_lan{host=\"glmt6000\"}",
+               "instant" : true,
+               "legendFormat" : "LAN (192.168.10.x)",
+               "queryType" : "instant",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "DHCP Clients",
+         "type" : "bargauge"
+      },
+      {
+         "description" : "Top 10 clientes por bytes transferidos (conntrack)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 1,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "blue",
+                        "value" : null
+                     },
+                     {
+                        "color" : "green",
+                        "value" : 10000000
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 100000000
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 500000000
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 1000000000
+                     }
+                  ]
+               },
+               "unit" : "decbytes"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 10,
+            "w" : 24,
+            "x" : 0,
+            "y" : 79
+         },
+         "id" : 30,
+         "options" : {
+            "displayMode" : "gradient",
+            "minVizHeight" : 16,
+            "minVizWidth" : 8,
+            "namePlacement" : "auto",
+            "orientation" : "horizontal",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : true
+            },
+            "showUnfilled" : true,
+            "sizing" : "auto",
+            "text" : {},
+            "valueMode" : "color"
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "topk(10, router_client_bw_bytes{host=\"glmt6000\"})",
+               "instant" : true,
+               "legendFormat" : "{{ip}}",
+               "range" : false,
+               "refId" : "A"
+            }
+         ],
+         "title" : "Top 10 Client Bandwidth",
+         "type" : "bargauge"
+      },
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 89
+         },
+         "id" : 103,
+         "panels" : [],
+         "title" : "WiFi",
+         "type" : "row"
+      },
+      {
+         "description" : "RSSI promedio de clientes conectados por banda",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 15,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "red",
+                        "value" : null
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : -80
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : -70
+                     },
+                     {
+                        "color" : "green",
+                        "value" : -50
+                     }
+                  ]
+               },
+               "unit" : "dBm"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 90
+         },
+         "id" : 31,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_rssi{host=\"glmt6000\",band=\"2.4G\"}",
+               "legendFormat" : "2.4G Avg RSSI",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_rssi{host=\"glmt6000\",band=\"5G\"}",
+               "legendFormat" : "5G Avg RSSI",
+               "range" : true,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WiFi Signal Strength (RSSI)",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Porcentaje de tiempo que el canal esta ocupado",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 20,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "max" : 100,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 40
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 70
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 90
+                     }
+                  ]
+               },
+               "unit" : "percent"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 90
+         },
+         "id" : 32,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_chan_util{host=\"glmt6000\",band=\"2.4G\"}",
+               "legendFormat" : "2.4G Channel",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_chan_util{host=\"glmt6000\",band=\"5G\"}",
+               "legendFormat" : "5G Channel",
+               "range" : true,
+               "refId" : "B"
+            }
+         ],
+         "title" : "WiFi Channel Utilization",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Velocidad de enlace promedio por banda (Mbit/s)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 10,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 1,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     }
+                  ]
+               },
+               "unit" : "Mbits"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 98
+         },
+         "id" : 33,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_rx_rate{host=\"glmt6000\",band=\"2.4G\"}",
+               "legendFormat" : "2.4G RX",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_tx_rate{host=\"glmt6000\",band=\"2.4G\"}",
+               "legendFormat" : "2.4G TX",
+               "range" : true,
+               "refId" : "B"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_rx_rate{host=\"glmt6000\",band=\"5G\"}",
+               "legendFormat" : "5G RX",
+               "range" : true,
+               "refId" : "C"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_wifi_tx_rate{host=\"glmt6000\",band=\"5G\"}",
+               "legendFormat" : "5G TX",
+               "range" : true,
+               "refId" : "D"
+            }
+         ],
+         "title" : "WiFi TX/RX Rate",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Numero de clientes WiFi conectados a lo largo del tiempo",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 20,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto",
+                  "stacking" : {
+                     "mode" : "none"
+                  }
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 98
+         },
+         "id" : 34,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_wifi_2g{host=\"glmt6000\"}",
+               "legendFormat" : "2.4G Clients",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_wifi_5g{host=\"glmt6000\"}",
+               "legendFormat" : "5G Clients",
+               "range" : true,
+               "refId" : "B"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_clients_wifi_total{host=\"glmt6000\"}",
+               "legendFormat" : "Total",
+               "range" : true,
+               "refId" : "C"
+            }
+         ],
+         "title" : "WiFi Clients History",
+         "type" : "timeseries"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 10,
+                  "gradientMode" : "none",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               },
+               "unit" : "dBm"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 106
+         },
+         "id" : 15,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_wifi_noise{host=\"glmt6000\",band=\"2.4G\"}",
+               "legendFormat" : "2.4 GHz",
+               "refId" : "A"
+            },
+            {
+               "expr" : "router_wifi_noise{host=\"glmt6000\",band=\"5G\"}",
+               "legendFormat" : "5 GHz",
+               "refId" : "B"
+            }
+         ],
+         "title" : "WiFi Noise Floor",
+         "type" : "timeseries"
+      },
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 114
+         },
+         "id" : 104,
+         "panels" : [],
+         "title" : "DNS",
+         "type" : "row"
+      },
+      {
+         "datasource" : {
+            "uid" : "grafanacloud-prom"
+         },
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisBorderShow" : false,
+                  "axisCenteredZero" : false,
+                  "axisColorMode" : "text",
+                  "axisLabel" : "",
+                  "axisPlacement" : "auto",
+                  "barAlignment" : 0,
+                  "barWidthFactor" : 0.6,
+                  "drawStyle" : "line",
+                  "fillOpacity" : 15,
+                  "gradientMode" : "none",
+                  "hideFrom" : {
+                     "legend" : false,
+                     "tooltip" : false,
+                     "viz" : false
+                  },
+                  "insertNulls" : false,
+                  "lineInterpolation" : "linear",
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "scaleDistribution" : {
+                     "type" : "linear"
+                  },
+                  "showPoints" : "auto",
+                  "showValues" : false,
+                  "spanNulls" : false,
+                  "stacking" : {
+                     "group" : "A",
+                     "mode" : "none"
+                  },
+                  "thresholdsStyle" : {
+                     "mode" : "off"
+                  }
+               },
+               "mappings" : [],
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : 0
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 80
+                     }
+                  ]
+               }
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 115
+         },
+         "id" : 17,
+         "options" : {
+            "legend" : {
+               "calcs" : [],
+               "displayMode" : "list",
+               "placement" : "bottom",
+               "showLegend" : true
+            },
+            "tooltip" : {
+               "hideZeros" : false,
+               "mode" : "single",
+               "sort" : "none"
+            }
+         },
+         "pluginVersion" : "12.4.0-21324284684",
+         "targets" : [
+            {
+               "expr" : "router_dns_total{host=\"glmt6000\"}",
+               "legendFormat" : "Total Queries",
+               "refId" : "A"
+            },
+            {
+               "expr" : "router_dns_blocked{host=\"glmt6000\"}",
+               "legendFormat" : "Blocked",
+               "refId" : "B"
+            }
+         ],
+         "title" : "DNS Queries & Blocked",
+         "type" : "timeseries"
+      },
+      {
+         "collapsed" : false,
+         "gridPos" : {
+            "h" : 1,
+            "w" : 24,
+            "x" : 0,
+            "y" : 123
+         },
+         "id" : 105,
+         "panels" : [],
+         "title" : "QoS / SQM",
+         "type" : "row"
+      },
+      {
+         "description" : "Paquetes en cola (backlog) por WAN - indica congestion activa",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "axisPlacement" : "auto",
+                  "fillOpacity" : 20,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     }
+                  ]
+               }
+            },
+            "overrides" : [
+               {
+                  "matcher" : {
+                     "id" : "byRegexp",
+                     "options" : "bytes"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "unit",
+                        "value" : "decbytes"
+                     },
+                     {
+                        "id" : "custom.axisPlacement",
+                        "value" : "right"
+                     }
+                  ]
+               },
+               {
+                  "matcher" : {
+                     "id" : "byRegexp",
+                     "options" : "pkts"
+                  },
+                  "properties" : [
+                     {
+                        "id" : "unit",
+                        "value" : "short"
+                     }
+                  ]
+               }
+            ]
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 124
+         },
+         "id" : 35,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_backlog_pkts{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 pkts",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_backlog_pkts{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 pkts",
+               "range" : true,
+               "refId" : "B"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_backlog_bytes{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 bytes",
+               "range" : true,
+               "refId" : "C"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_backlog_bytes{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 bytes",
+               "range" : true,
+               "refId" : "D"
+            }
+         ],
+         "title" : "SQM Queue Backlog",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Memoria usada por CAKE SQM por WAN",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "max" : 4194304,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 2097152
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 3145728
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 3932160
+                     }
+                  ]
+               },
+               "unit" : "decbytes"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 6,
+            "x" : 12,
+            "y" : 124
+         },
+         "id" : 36,
+         "options" : {
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "showThresholdLabels" : false,
+            "showThresholdMarkers" : true
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_mem_used{host=\"glmt6000\",iface=\"wan\"}",
+               "instant" : true,
+               "legendFormat" : "WAN1",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_mem_used{host=\"glmt6000\",iface=\"wan2\"}",
+               "instant" : true,
+               "legendFormat" : "WAN2",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "SQM Memory",
+         "type" : "gauge"
+      },
+      {
+         "description" : "Estimacion de capacidad del enlace por CAKE",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "thresholds"
+               },
+               "decimals" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "blue",
+                        "value" : null
+                     }
+                  ]
+               },
+               "unit" : "Mbits"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 6,
+            "x" : 18,
+            "y" : 124
+         },
+         "id" : 37,
+         "options" : {
+            "colorMode" : "background",
+            "graphMode" : "none",
+            "justifyMode" : "center",
+            "orientation" : "vertical",
+            "reduceOptions" : {
+               "calcs" : [
+                  "lastNotNull"
+               ],
+               "fields" : "",
+               "values" : false
+            },
+            "textMode" : "value_and_name"
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_capacity{host=\"glmt6000\",iface=\"wan\"}",
+               "instant" : true,
+               "legendFormat" : "WAN1",
+               "range" : false,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_queue_capacity{host=\"glmt6000\",iface=\"wan2\"}",
+               "instant" : true,
+               "legendFormat" : "WAN2",
+               "range" : false,
+               "refId" : "B"
+            }
+         ],
+         "title" : "SQM Capacity",
+         "type" : "stat"
+      },
+      {
+         "description" : "Peak delay por clase de trafico CAKE (Bulk, Best Effort, Video, Voice) en microsegundos",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 10,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     },
+                     {
+                        "color" : "yellow",
+                        "value" : 1000
+                     },
+                     {
+                        "color" : "orange",
+                        "value" : 5000
+                     },
+                     {
+                        "color" : "red",
+                        "value" : 10000
+                     }
+                  ]
+               },
+               "unit" : "us"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 0,
+            "y" : 132
+         },
+         "id" : 38,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_delay_pk_delay{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 {{tin}}",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_delay_pk_delay{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 {{tin}}",
+               "range" : true,
+               "refId" : "B"
+            }
+         ],
+         "title" : "SQM Peak Delay per Class",
+         "type" : "timeseries"
+      },
+      {
+         "description" : "Drops acumulados por clase de trafico CAKE (Bulk, Best Effort, Video, Voice)",
+         "fieldConfig" : {
+            "defaults" : {
+               "color" : {
+                  "mode" : "palette-classic"
+               },
+               "custom" : {
+                  "fillOpacity" : 15,
+                  "lineWidth" : 2,
+                  "pointSize" : 5,
+                  "showPoints" : "auto"
+               },
+               "decimals" : 0,
+               "min" : 0,
+               "thresholds" : {
+                  "mode" : "absolute",
+                  "steps" : [
+                     {
+                        "color" : "green",
+                        "value" : null
+                     }
+                  ]
+               },
+               "unit" : "short"
+            },
+            "overrides" : []
+         },
+         "gridPos" : {
+            "h" : 8,
+            "w" : 12,
+            "x" : 12,
+            "y" : 132
+         },
+         "id" : 39,
+         "options" : {
+            "legend" : {
+               "displayMode" : "list",
+               "placement" : "bottom"
+            },
+            "tooltip" : {
+               "mode" : "multi"
+            }
+         },
+         "targets" : [
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_drops_drops{host=\"glmt6000\",iface=\"wan\"}",
+               "legendFormat" : "WAN1 {{tin}}",
+               "range" : true,
+               "refId" : "A"
+            },
+            {
+               "datasource" : {
+                  "type" : "prometheus",
+                  "uid" : "grafanacloud-prom"
+               },
+               "expr" : "router_sqm_drops_drops{host=\"glmt6000\",iface=\"wan2\"}",
+               "legendFormat" : "WAN2 {{tin}}",
+               "range" : true,
+               "refId" : "B"
+            }
+         ],
+         "title" : "SQM Drops per Class",
+         "type" : "timeseries"
+      }
+   ],
+   "preload" : false,
+   "refresh" : "1m",
+   "schemaVersion" : 42,
+   "tags" : [
+      "router",
+      "openwrt",
+      "network"
+   ],
+   "templating" : {
+      "list" : []
+   },
+   "time" : {
+      "from" : "now-6h",
+      "to" : "now"
+   },
+   "timepicker" : {},
+   "timezone" : "browser",
+   "title" : "GL-MT6000 Network Dashboard",
+   "uid" : "caabe9af-27d7-4e64-bb57-c8eeb337bace",
+   "version" : 15,
+   "weekStart" : ""
+}
